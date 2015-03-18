@@ -22,7 +22,7 @@ def install():
     pkg.mark_install()
   try:
         cache.commit()
-  tk.messagebox("Package is now installed."
+  tk.messagebox("Package is now installed.")
 def remove():
   os.system("apt-get remove " + pkg)
   tk.messagebox("Package removed.")
