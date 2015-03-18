@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import apt
 import os
 import tkinter as tk
@@ -21,11 +22,13 @@ def install():
     pkg.mark_install()
   try:
         cache.commit()
-    except Exception, arg:
-      tk.messagebox(sys.stderr, "Sorry, package installation failed [{err}]".format(err=str(arg))
   tk.messagebox("Package is now installed."
-
+def remove():
+  os.system("apt-get remove " + pkg)
+  tk.messagebox("Package removed.")
 install_pkg = Button(master, text="Install", width=15, command=install)
 install_pkg.pack()
 
+uninstall_pkg = Button(master, text="Remove", width=15, command=remove)
+uninstall_pkg.pack()
 mainloop()
