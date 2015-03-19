@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pynstall
+Comment=Install Applications
+Exec=python3 /home/user/Desktop
+Icon=/home/hyperdrive/Downloads/python3.png
+Path=
+Terminal=false
+StartupNotify=false
