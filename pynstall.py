@@ -1,41 +1,11 @@
-#!/usr/bin/python
-import apt
-import os
-import sys
+#!/usr/bin/python3
+from os import system as do
 
-cache = apt.cache.Cache()
-cache.update()
-cache.open()
+print("Updating repos...")
+do("apt-get update")
 
-exit = 0
-print("Make sure you are root.")
-while exit = 0:
-  command = input("What would you like to do? Type help for options.")
-  if command == "help":
-    print("Commands are: install(Installs packages) remove(Removes packages) update(Updates packages) exit(Exit this program) help(display this screen")
-  elif command == "install":
-    pkg_name = input("Type the name of the package you want to install)
-    pkg = cache[pkg_name]
-    if pkg.is_installed:
-      print "{pkg_name} already installed".format(pkg_name=pkg_name)
-  else:
-      pkg.mark_install()
+command = input("What do you wish to do? Type help for a list of commands.  ")
 
-      try:
-          cache.commit()
-      except Exception, arg:
-          print >> sys.stderr, "Sorry, package installation failed [{err}]"(err=str(arg))
-  elif command == "remove":
-    package = input("What package do you want to remove?")
-    os.system("apt-get remove " + package)
-    print(package.capitalize + " was removed.")
-  elif command == "update":
-   os.system("apt-get update")
-   os.system("apt-get upgrade")
-   print("System updated.")
-  elif command == "exit":
-    print("exiting...")
-   os.system("clear")
-    exit = 1
-  else:
-   print("Command not recognized. Type 'help' for a list of commands.")
+if command == "update":
+  print("Updating system...")
+  do("apt-get upgrade")
