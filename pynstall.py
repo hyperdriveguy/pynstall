@@ -7,7 +7,7 @@ do("apt-get update")
 
 exit = "no"
 
-while exit = "no":
+while exit == "no":
   command = input("What do you wish to do? Type help for a list of commands.  ")
 
   if command == "update":
