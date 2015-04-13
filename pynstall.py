@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 from os import system as do
 
-print("Make sure you are root.")
+print("Making sure you are root.")
+do("su")
 print("Updating repos...")
 do("apt-get update")
 
@@ -16,11 +17,9 @@ while exit == "no":
   if command == "install":
     pkg = input("Type the name of the package you wish to install:  ")
     do("apt-get install " + pkg)
-    print("If no errors ocurred, then " + pkg +" was installed.")
   if command == "remove":
     pkg = input("Type the name of the package you wish to remove:  ")
     do("apt-get remove " + pkg)
-    print("If no errors ocurred, then " + pkg +" was removed.")
   if command == "help":
     print("update(Update your packages) install(Installs packages) remove(Removes packages) help(Displays this screen) exit(exits program) notes(Displays release notes)")
     print("This APPT has Super Cow Powers.")
@@ -31,4 +30,4 @@ while exit == "no":
     print("Pynstall is a Advanced Python Packaging Tool (APPT). It depends on APT to work.")
   else:
    print("Make sure you typed the command correctly.")
-  
+do("exit")
