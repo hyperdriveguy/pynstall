@@ -11,7 +11,7 @@ if $yn = "y" or "Y" then:
   read -e -p "Enter the name of your home directory: " home
   #Move files
   mv /home/$home/Downloads/pynstall/pynstall.py /usr/bin/pynstall.py
-  mv /home/$home/Downloads/pynstall/pynstall.desktop /home/$home/Desktop/pynstall.desktop
+  printf '[Desktop Entry]\n Encoding=UTF-8\n Version=1.0\n Type=Application\n Terminal=true\n Exec=pynstall\n Name=Pynstall' > /home/$home/Desktop/pynstall.desktop
   mv /home/$home/Downloads/pynstall/pynstall /usr/bin/pynstall
   #Delete files
   mv /home/$home/Downloads/pynstall/install.sh /home/$home/install.sh
@@ -22,8 +22,8 @@ elif $yn = "n" or "N" then:
   read -e -p "Enter the name of your home directory: " home
   #Move files
   mv $pynstall/pynstall.py /usr/bin/pynstall.py
-  mv $pynstall/pynstall/pynstall.desktop /home/$home/Desktop/pynstall.desktop
   mv $pynstall/pynstall/pynstall /usr/bin/pynstall
+  printf '[Desktop Entry]\n Encoding=UTF-8\n Version=1.0\n Type=Application\n Terminal=true\n Exec=pynstall\n Name=Pynstall' > /home/$home/Desktop/pynstall.desktop
   #Delete files
   mv $pynstall/pynstall/install.sh /home/$home/install.sh
   rm $pynstall/pynstall
