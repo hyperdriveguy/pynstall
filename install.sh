@@ -1,8 +1,10 @@
 #!/bin/bash
 #Check to see if the user is root
 echo "Making sure you are root..."
-sudo
+su
 echo "PYNSTALL INSTALLER"
+echo "Installing dependencies..."
+apt-get install --force-yes python3 python3-apt
 read -e -p "Are the pynstall files in your Downloads? (y/n)" yn
 if $yn = "y" or "Y" then:
   #Ask for the name of the home directory
