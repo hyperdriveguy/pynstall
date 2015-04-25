@@ -14,8 +14,8 @@ sleep(2)
 exit = "no"
 do("clear")
 while exit == "no":
+  do("clear")
   command = input("What do you wish to do? Type help for a list of commands.  ")
-
   if command == "update":
     print("Updating system...")
     do("apt-get upgrade")
@@ -40,9 +40,4 @@ while exit == "no":
     print("Version 1.1")
     print("Pynstall is a Advanced Python Packaging Tool (APPT). It depends on APT to work.")
     sleep(5)
-  while not command == "update" or command == "install" or command == "remove" or command == "help" or command == "exit" or command == "notes" or command == " ":
-    print("Make sure you typed the command correctly.")
-    command = " "
-    sleep(2)
-    do("clear")
 do("exit")
