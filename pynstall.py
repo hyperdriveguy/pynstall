@@ -1,33 +1,48 @@
 #!/usr/bin/python3
 from os import system as do
-
-print("Making sure you are root.")
-do("su")
-print("Updating repos...")
-do("apt-get update")
-
+from time import sleep
+do("clear")
+print("Make sure you are root.")
+update = input("Update Repos? y/n")
+if update == "y" or update == "Y":
+  print("Updating repos...")
+  do("apt-get update")
+  do("clear")
+if update == "n" or update == "N":
+  print("Okay...")
+sleep(2)
 exit = "no"
-
+do("clear")
 while exit == "no":
   command = input("What do you wish to do? Type help for a list of commands.  ")
 
   if command == "update":
-   print("Updating system...")
-   do("apt-get upgrade")
+    print("Updating system...")
+    do("apt-get upgrade")
+    do("clear")
   if command == "install":
     pkg = input("Type the name of the package you wish to install:  ")
     do("apt-get install " + pkg)
+    do("clear")
   if command == "remove":
     pkg = input("Type the name of the package you wish to remove:  ")
     do("apt-get remove " + pkg)
+    do("clear")
   if command == "help":
     print("update(Update your packages) install(Installs packages) remove(Removes packages) help(Displays this screen) exit(exits program) notes(Displays release notes)")
     print("This APPT has Super Cow Powers.")
+    sleep(2)
+    do("clear")
   if command == "exit":
-   exit = "yes"
+    exit = "yes"
+    do("clear")
   if command == "notes":
-    print("Version 1.0")
+    print("Version 1.1")
     print("Pynstall is a Advanced Python Packaging Tool (APPT). It depends on APT to work.")
-  else:
-   print("Make sure you typed the command correctly.")
+    sleep(5)
+  while not command == "update" or command == "install" or command == "remove" or command == "help" or command == "exit" or command == "notes" or command == " ":
+    print("Make sure you typed the command correctly.")
+    command = " "
+    sleep(2)
+    do("clear")
 do("exit")
