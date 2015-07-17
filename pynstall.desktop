@@ -5,4 +5,5 @@ Type=Application
 Terminal=true
 Exec=pynstall
 Name=Pynstall
+Comment=Easy to use Python-APT manager.
 Icon=/usr/share/python1.svg
