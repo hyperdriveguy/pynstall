@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo "Make sure you are root..."
 clear
 echo "PYNSTALL INSTALLER"
 echo "Installing dependencies..."
@@ -8,14 +7,16 @@ sudo apt-get install --force-yes python3 python3-apt
 clear
 read -e -p "Enter the name of the directory the Pynstall folder is in. For example: /home/derp/Downloads: " pynstall
 clear
+#Make Directory
+sudo mkdir /usr/share/pynstall
 #Move files
 sudo mv $pynstall/pynstall.py /usr/bin/pynstall.py
 sudo mv $pynstall/pynstall/pynstall /usr/bin/pynstall
-sudo mv $pynstall/pynstall/python1.svg /usr/share/python1.svg
+sudo mv $pynstall/pynstall/python1.svg /usr/share/pynstall/python1.svg
+sudo mv $pynstall/pynstall/README.md /usr/share/pynstall/README.md
+sudo mv $pynstall/pynstall/.gitignore /usr/share/pynstall/.gitignore
 mv $pynstall/pynstall/pynstall.desktop $HOME/Desktop/pynstall.desktop
 #Delete files
-mv $pynstall/pynstall/install.sh $HOME/install.sh
-rm $pynstall/pynstall/README.md
-rm $pynstall/pynstall/.gitignore
+rm $pynstall/pynstall/install.sh
 echo "Installer finished!"
 exit
