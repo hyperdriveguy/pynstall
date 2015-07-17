@@ -11,7 +11,7 @@ clear
 sudo mkdir /usr/share/pynstall
 #Move files
 sudo mv $pynstall/pynstall.py /usr/bin/pynstall.py
-sudo mv $pynstall/pynstall/pynstall /usr/bin/pynstall
+sudo mv $pynstall/pynstall/pynstall /bin/pynstall
 sudo mv $pynstall/pynstall/python1.svg /usr/share/pynstall/python1.svg
 sudo mv $pynstall/pynstall/README.md /usr/share/pynstall/README.md
 sudo mv $pynstall/pynstall/.gitignore /usr/share/pynstall/.gitignore
