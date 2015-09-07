@@ -3,7 +3,7 @@
 clear
 echo "PYNSTALL INSTALLER"
 echo "Installing dependencies..."
-sudo apt-get install --force-yes python3 python3-apt
+sudo apt-get install --yes python3
 clear
 read -e -p "Enter the name of the directory the Pynstall folder is in. For example: /home/derp/Downloads: " pynstall
 clear
